@@ -306,7 +306,7 @@
             </div>
             
             <div class="tip">
-                <strong>🤝 Hulp vragen:</strong> Schaam je niet om hulp te vragen aan docenten of klasgenoten. Dat is slim, niet zwak!
+                <strong>🤝 Hulp vragen:</strong> Schaam je niet om hulp te vragen aan docenten of klasgenoten. Dit geldt vooral voor taalvakken als Nederlands niet je moedertaal is.
             </div>
             
             <div class="tip">
@@ -364,10 +364,11 @@
             
             <ul>
                 <li>Maak een realistische planning voor het schooljaar</li>
-                <li>Identificeer je zwakke punten van vorig jaar</li>
-                <li>Zoek extra hulp voor moeilijke vakken</li>
-                <li>Bouw goede gewoontes op (huiswerk, herhaling)</li>
-                <li>Blijf positief en gemotiveerd!</li>
+                <li>Identificeer je zwakke punten van vorig jaar (let extra op taalvakken)</li>
+                <li>Zoek extra hulp voor moeilijke vakken (vooral Nederlands/talen)</li>
+                <li>Bouw goede gewoontes op (huiswerk, herhaling, Nederlandse media)</li>
+                <li>Gebruik je culturele krachten: doorzettingsvermogen en analytisch denken</li>
+                <li>Blijf positief en gemotiveerd - 加油! (Jiā yóu!)</li>
             </ul>
             
             <button onclick="updateProgress()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 20px; transition: transform 0.3s ease;">
@@ -392,7 +393,30 @@
             document.getElementById('progress').style.width = progressValue + '%';
             
             if (progressValue === 100) {
-                alert('Geweldig Tim! Je bent klaar om 5 VWO succesvol af te ronden! 🎉');
+                // Show success message and redirect
+                const celebration = document.createElement('div');
+                celebration.innerHTML = '🎉 Geweldig Tim! Je bent klaar om 5 VWO succesvol af te ronden! 🎉';
+                celebration.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 30px;
+                    border-radius: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    z-index: 1000;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    text-align: center;
+                `;
+                document.body.appendChild(celebration);
+                
+                setTimeout(() => {
+                    window.open('https://www.chinese-tools.com/jdd/public/documents/caricatures/li-zhaoxing.jpg', '_blank');
+                    celebration.remove();
+                }, 2000);
             }
         }
         
